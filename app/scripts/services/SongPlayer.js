@@ -80,6 +80,12 @@
 		*/
 		SongPlayer.currentTime = null;
 		
+		/**
+		* @desc current volume level of currently playing song out of 100. default 80.
+		* @type {Number}
+		*/
+		SongPlayer.volume = 80;
+		
         /**
         * @function SongPlayer.play
         * @desc plays song and updates song info as needed
@@ -125,7 +131,7 @@
             }
         };
 		
-		/*
+		/**
 		* @function SongPlayer.next
 		* @desc selects next song in song list and plays/pauses accoordingly
         */
@@ -142,14 +148,25 @@
 			}
 		};
 		
-		/*
-		* @function setCurrentTime
+		/**
+		* @function SongPlayer.setCurrentTime
 		* @desc Set current time (in seconds) of currently playing song
 		* @param {Number} time
 		*/
 		SongPlayer.setCurrentTime = function(time) {
 			if (currentBuzzObject) {
 				currentBuzzObject.setTime(time);
+			}
+		};
+		
+		/**
+		* @function SongPlayer.setVolume
+		* @desc Set volume level of currently playing song
+		* @param {Number} volume
+		*/
+		SongPlayer.setVolume = function(volume) {
+			if (currentBuzzObject) {
+				currentBuzzObject.setVolume(volume);
 			}
 		};
 		
