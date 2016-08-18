@@ -172,6 +172,28 @@
 				currentBuzzObject.setVolume(volume);
 			}
 		};
+        
+        /**
+        * @function SongPlayer.mute
+        * @desc mutes currently playing song
+        * @param {Object} song
+        */
+        SongPlayer.mute = function(song) {
+            song = song || SongPlayer.currentSong
+            currentBuzzObject.mute();
+            song.isMuted = true;
+        }
+        
+        /**
+        * @function SongPlayer.unmute
+        * @desc unmutes currently playing song
+        * @param {Object} song
+        */
+        SongPlayer.unmute = function(song) {
+            song = song || SongPlayer.currentSong
+            currentBuzzObject.unmute();
+            song.isMuted = false;
+        }
 		
         return SongPlayer;
     }
